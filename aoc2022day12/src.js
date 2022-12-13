@@ -68,12 +68,15 @@ for (var j = 0; j < lines.length; j++) {
             height = "abcdefghijklmnopqrstuvwxyz".indexOf(char);
         }
         cube.geometry.height = height;
+        cube.material.side = THREE.DoubleSide
         cubes.push(cube)
         scene.add(cube);
     }
 }
 
 camera.position.z = 60;
+camera.position.x = lines[0].length / 2;
+camera.position.y = lines.length / 2;
 function animate() {
     requestAnimationFrame(animate);
     for (var i = 0; i < cubes.length; i++) {
